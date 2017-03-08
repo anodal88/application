@@ -29,7 +29,7 @@
         </div>
     </li>
     <li class="active">
-        <a href="index.html"><i class="fa fa-dashboard"></i> <span class="nav-label">Dashboard</span></a>
+        <a href="{{ route('admin.dashboard') }}"><i class="fa fa-dashboard"></i> <span class="nav-label">Dashboard</span></a>
     </li>
 
     <li class="">
@@ -37,7 +37,7 @@
             <span class="nav-label">Security</span><span class="fa arrow"></span>
         </a>
         <ul class="nav nav-second-level collapse" aria-expanded="false" style="height: 0px;">
-            <li><a href="graph_flot.html">Users</a></li>
+            <li><a href="{{ route('admin.dashboard.users') }}">Users</a></li>
             <li><a href="graph_morris.html">Roles</a></li>
             <li><a href="graph_rickshaw.html">Permissions</a></li>
             <li><a href="graph_chartjs.html">Abilities</a></li>

@@ -27,6 +27,8 @@ Route::group(['prefix' => 'application'], function (){
 /*Administrators*/
 Route::group(['prefix' => 'admin'], function (){
     Route::get('/dashboard', 'AdminController@index')->name('admin.dashboard') ;
+    Route::get('/dashboard/users', 'ManageUsersController@index')->name('admin.dashboard.users') ;
+    Route::get('/dashboard/users/data', 'ManageUsersController@getIndexData')->name('admin.dashboard.usersdata') ;
 });
 
 /*Property Managers*/

@@ -14,6 +14,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+        $this->create100();
         $this->crudPermmisions();
 
         $admin_role= new Role();
@@ -126,5 +127,8 @@ class UserSeeder extends Seeder
         $deletePermission->display_name = 'Delete Permission';
         $deletePermission->description = 'Delete new Permission';
         $deletePermission->save();
+    }
+    public function create100(){
+        factory(App\User::class, 100)->create();
     }
 }
