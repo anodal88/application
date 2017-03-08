@@ -15,6 +15,15 @@ $(document).ready(function () {
         }, 500);
         event.preventDefault();
     });
+    /*To initialize checkboxes and radio buttons*/
+    $('.i-checks').iCheck({
+        checkboxClass: 'icheckbox_square-green',
+        radioClass: 'iradio_square-green',
+    });
+    
+    // Move modal to body
+    // Fix Bootstrap backdrop issu with animation.css
+    $('.modal').appendTo("body");
 
 });
 

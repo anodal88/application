@@ -100,9 +100,12 @@
 
 
     <li>
-        <a href="login.html">
-            <i class="fa fa-sign-out"></i> Log out
+        <a href="{{ url('/logout') }}"
+           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+             <i class="fa fa-sign-out"></i> Logout
         </a>
+
+
     </li>
 
 </ul>

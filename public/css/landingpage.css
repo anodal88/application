@@ -10,6 +10,8 @@
 body {
   color: #676a6c;
   font-family: 'Open Sans', helvetica, arial, sans-serif;
+    /*Added by Antonio Nodal to resolve confilcts with style.css*/
+  background-color:#ffffff !important;
 }
 span.navy {
   color: #1ab394;
@@ -44,6 +46,14 @@ h1 {
 }
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
+
+/*To fix conflicts with styles.css{*/
+.navbar-toggle{
+    background-color: #ffffff !important;
+    padding: 9px 10px;
+}
+/*}*/
+
 .navbar-wrapper {
   position: absolute;
   top: 0;
@@ -67,7 +77,8 @@ h1 {
 }
 .navbar-default {
   background-color: transparent;
-  border-color: transparent;
+  /*!important line 73 Added by Antonio Nodal To fix conflicts with style.css*/
+  border-color: transparent !important;
   transition: all 0.3s ease-in-out 0s;
 }
 .navbar-default .nav li a {
@@ -86,9 +97,12 @@ h1 {
   background: transparent;
   color: #fff;
   border-top: 6px solid #1ab394;
+
 }
 .navbar-default .navbar-nav > li > a:hover {
   color: #1ab394;
+    /*Added to resolve conflicts between landing.css and style.css*/
+    background-color: transparent !important;
 }
 .navbar-default .navbar-nav > .active > a:focus {
   background: transparent;
@@ -123,12 +137,20 @@ h1 {
 .navbar-wrapper .navbar.navbar-scroll {
   padding-top: 0;
   padding-bottom: 5px;
-  border-bottom: 1px solid #e7eaec;
+    /*Important added on line 130 to resolve conflict with style.css*/
+  border-bottom: 1px solid #e7eaec !important;
   border-radius: 0;
 }
 .nav > li > a {
   padding: 25px 10px 15px 10px;
 }
+/*Added to resolve conflicts of landing css and default style.css {*/
+.nav > li.active{
+    background: transparent;
+    border-left: none;
+}
+/*}*/
+
 .navbar-scroll .navbar-nav > li > a {
   padding: 20px 10px;
 }
@@ -373,7 +395,7 @@ li.pricing-title {
 }
 /* Buttons - only primary custom button
 ------------------------- */
-.btn-primary.btn-outline:hover,
+/*.btn-primary.btn-outline:hover,
 .btn-success.btn-outline:hover,
 .btn-info.btn-outline:hover,
 .btn-warning.btn-outline:hover,
@@ -419,10 +441,23 @@ fieldset[disabled] .btn-primary:active,
 fieldset[disabled] .btn-primary.active {
   background-color: #1dc5a3;
   border-color: #1dc5a3;
-}
+}*/
 /* RESPONSIVE CSS
 -------------------------------------------------- */
+/*Added to fix conflicts in responsive with style.css{*/
+@media (min-width: 320px) {
+    .navbar-header{
+        float: none;
+        display: block;
+    }
+}
+/*}*/
 @media (min-width: 768px) {
+ /*Added to fix conflicts in responsive with style.css*/
+    .navbar-header{
+        float: left;
+        display: inline;
+    }
   /* Navbar positioning foo */
   .navbar-wrapper {
     margin-top: 20px;
@@ -770,3 +805,9 @@ fieldset[disabled] .btn-primary.active {
 .pace-inactive {
   display: none;
 }
+/*To resolve  backdrop z-index Modal Conflict {*/
+.modal-backdrop {
+    z-index: 1200 !important;
+}
+/*}*/
+

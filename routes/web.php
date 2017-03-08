@@ -12,5 +12,29 @@
 */
 
 Route::get('/', function () {
-    return view('management.dashboard');
+    return view('layouts.landing');
+})->name('landing');
+
+Auth::routes();
+
+/*Route::get('/dashboard', 'ApplicationController@index')->name('dashboard') ;*/
+
+/*Application Controller*/
+Route::group(['prefix' => 'application'], function (){
+    Route::get('/router', 'ApplicationController@router')->name('application.router') ;
+});
+
+/*Administrators*/
+Route::group(['prefix' => 'admin'], function (){
+    Route::get('/dashboard', 'AdminController@index')->name('admin.dashboard') ;
+});
+
+/*Property Managers*/
+Route::group(['prefix' => 'owner'], function (){
+    Route::get('/dashboard', 'OwnerController@index')->name('owner.dashboard') ;
+});
+
+/*Users*/
+Route::group(['prefix' => 'tenant'], function (){
+    Route::get('/dashboard', 'TenantController@index')->name('tenant.dashboard') ;
 });

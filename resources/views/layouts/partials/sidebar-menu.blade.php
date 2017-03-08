@@ -2,19 +2,26 @@
     <li class="nav-header">
         <div class="dropdown profile-element">
             <span>
-                <img class="img-circle" alt="image" src="img/profile_small.jpg">
+
+                <img class="img-circle" alt="image"
+                     src="{{asset('img/'.Auth::user()->avatar)}}">
             </span>
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="clear"> <span class="block m-t-xs"> <strong
-                                        class="font-bold">Antonio Nodal</strong>
-                             </span> <span class="text-muted text-xs block">Administrator <b
-                                        class="caret"></b></span> </span> </a>
+                                            class="font-bold">{{Auth::user()->name}}</strong>
+                             </span>
+                             <span class="text-muted text-xs block">Administrator <b
+                                         class="caret"></b></span>
+                            </span> </a>
             <ul class="dropdown-menu animated fadeInRight m-t-xs">
                 <li><a href="profile.html">Profile</a></li>
                 <li><a href="contacts.html">Contacts</a></li>
                 <li><a href="mailbox.html">Mailbox</a></li>
                 <li class="divider"></li>
-                <li><a href="login.html">Logout</a></li>
+                <li><a  href="{{ url('/logout') }}"
+                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        Logout
+                    </a></li>
             </ul>
         </div>
         <div class="logo-element">

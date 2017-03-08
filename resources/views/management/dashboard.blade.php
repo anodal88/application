@@ -2,10 +2,7 @@
 
 @section('title','Dashboard')
 
-@section('stylesheets')
-    @parent
 
-@endsection
 
 @section('search-form-action','#')
 
@@ -22,8 +19,4 @@
             </div>
         </div>
     </div>
-@endsection
-
-@section('javascripts')
-    @parent
 @endsection

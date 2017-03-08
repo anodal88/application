@@ -20,12 +20,13 @@
 </head>
 
 <body>
-
+@include('layouts.partials.logout-form')
 <div id="wrapper">
 
     <nav class="navbar-default navbar-static-side" role="navigation">
         <div class="sidebar-collapse">
-            @include('management.partials.sidebar-menu')
+            <!--Sidebar for admin panel -->
+            @include('layouts.partials.sidebar-menu')
         </div>
     </nav>
 
@@ -72,7 +73,6 @@
                 <div>
                     <strong>Copyright</strong> Example Company &copy; 2014-2015
                 </div>
-
             @show
         </div>
 

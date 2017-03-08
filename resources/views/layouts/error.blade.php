@@ -28,7 +28,7 @@
     <div class="error-desc">
         @yield('error-description')
          <br/>
-        <a href="index.html" class="btn btn-primary m-t">Go Home</a>
+        <a href="{{route('dashboard')}}" class="btn btn-primary m-t">Go Home</a>
     </div>
 </div>
 
