@@ -29,6 +29,10 @@ Route::group(['prefix' => 'admin'], function (){
     Route::get('/dashboard', 'AdminController@index')->name('admin.dashboard') ;
     Route::get('/dashboard/users', 'ManageUsersController@index')->name('admin.dashboard.users') ;
     Route::get('/dashboard/users/data', 'ManageUsersController@getIndexData')->name('admin.dashboard.usersdata') ;
+    Route::get('/dashboard/roles', 'ManageRolesController@index')->name('admin.dashboard.roles') ;
+    Route::get('/dashboard/roles/data', 'ManageRolesController@getIndexData')->name('admin.dashboard.rolesdata') ;
+    Route::get('/dashboard/permissions', 'ManagePermissionsController@index')->name('admin.dashboard.permissions') ;
+    Route::get('/dashboard/permissions/data', 'ManagePermissionsController@getIndexData')->name('admin.dashboard.permissionsdata') ;
 });
 
 /*Property Managers*/

@@ -1,6 +1,6 @@
 @extends('layouts.backend')
 
-@section('title','Manage Users')
+@section('title','Manage Roles')
 
 @section('stylesheets')
     @parent
@@ -19,7 +19,7 @@
         <div class="col-lg-12">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <h5>Manage Users</h5>
+                    <h5>Manage Roles</h5>
                     <div class="ibox-tools">
 
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -35,12 +35,13 @@
                     </div>
                 </div>
                 <div class="ibox-content">
-                    <table  class="table table-striped table-bordered table-hover users">
+                    <table  class="table table-striped table-bordered table-hover roles">
                         <thead>
                         <tr>
                             <th>Id</th>
                             <th>Name</th>
-                            <th>Email</th>
+                            <th>Display Name</th>
+                            <th>Description</th>
                             <th>Created At</th>
                             <th>Updated At</th>
                         </tr>
@@ -64,18 +65,21 @@
 
     <script type="text/javascript">
         $(function () {
-            $('.users').DataTable({
+           var table= $('.roles').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: '{!! route('admin.dashboard.usersdata') !!}',
+                ajax: '{!! route('admin.dashboard.rolesdata') !!}',
                 columns: [
                     {data: 'id', name: 'id'},
                     {data: 'name', name: 'name'},
-                    {data: 'email', name: 'email'},
+                    {data: 'display_name', name: 'display_name'},
+                    {data: 'description', name: ''},
                     {data: 'created_at', name: 'created_at'},
                     {data: 'updated_at', name: 'updated_at'}
-                ]
+                ],
+
             });
+
         });
     </script>
 @endsection

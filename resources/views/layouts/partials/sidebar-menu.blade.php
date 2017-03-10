@@ -38,8 +38,8 @@
         </a>
         <ul class="nav nav-second-level collapse" aria-expanded="false" style="height: 0px;">
             <li><a href="{{ route('admin.dashboard.users') }}">Users</a></li>
-            <li><a href="graph_morris.html">Roles</a></li>
-            <li><a href="graph_rickshaw.html">Permissions</a></li>
+            <li><a href="{{ route('admin.dashboard.roles') }}">Roles</a></li>
+            <li><a href="{{ route('admin.dashboard.permissions') }}">Permissions</a></li>
             <li><a href="graph_chartjs.html">Abilities</a></li>
             <li><a href="graph_chartjs.html">Traces</a></li>
         </ul>
